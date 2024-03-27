@@ -1,0 +1,35 @@
+.footer {
+  padding-left: min(160px, 10%);
+  padding-right: min(160px, 10%);
+  height: 100px;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgb(143, 135, 135, 0.2);
+}
+
+.footer-img {
+  width: 48px;
+}
+
+.footer-social-logo {
+  margin: 8px;
+  width: 100%;
+  max-width: 48px;
+  min-width: 24px;
+}
+
+.footer-social-container {
+  display: flex;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+}
+
+.footer-link:hover {
+  background-color: white;
+  border-radius: 50px;
+}

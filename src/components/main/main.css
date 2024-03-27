@@ -1,3 +1,7 @@
+.container {
+  height: 100vh;
+}
+
 .add-section {
   display: flex;
   flex-direction: column;
@@ -26,16 +30,26 @@
   cursor: pointer;
 }
 
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .note-block {
   position: relative;
   margin: 16px;
   padding: 24px;
-  width: 100%;
   max-width: 300px;
-  max-height: 700px;
-  height: 100px;
+  height: 200px;
   background-color: rgb(242, 196, 108);
   border-radius: 5px;
+}
+
+.note-text {
+  height: 195px;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 .note-block:hover {
@@ -43,18 +57,19 @@
   cursor: pointer;
 }
 
-.note-img {
-  width: 18px;
+.note-cancel {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 3px;
+  right: 3px;
+  width: 18px;
   padding: 1px;
-  margin: 2px;
   border-radius: 50%;
+  text-align: center;
+  color: rgb(151, 105, 18);
 }
 
-.note-img:hover {
-  background-color: rgb(238, 238, 238);
+.note-cancel:hover {
+  background-color: rgb(236, 173, 55);
 }
 
 .edit-note-section {
