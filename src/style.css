@@ -10,9 +10,17 @@ body {
   display: none;
 }
 
-header,
 footer,
 section {
   padding-left: min(160px, 10%);
   padding-right: min(160px, 10%);
+}
+
+header {
+  padding-left: min(10px, 10%);
+  padding-right: min(160px, 10%);
+}
+
+h3 {
+  margin: 0;
 }

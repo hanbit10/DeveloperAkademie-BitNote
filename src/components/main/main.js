@@ -1,27 +1,27 @@
-let noteTitle = [];
-let noteText = [];
+let noteTitle = ["This is BitNote!"];
+let noteText = ["You can edit note by clikcing the button!"];
 
 let trashTitle = [];
 let trashText = [];
 
-function render() {
+window.render = () => {
   let note = document.getElementById("content");
+
   note.innerHTML = "";
 
   getCard();
   getTrash();
-
   for (let i = 0; i < noteTitle.length; i++) {
-    note.innerHTML += /*html*/ `
+    note.innerHTML += `
     <div id="note-block${i}" class="note-block">
-      <div class="note-text">    ${noteTitle[i]} <br> ${noteText[i]} </div>
+      <div class="note-text">  <h3>${noteTitle[i]}</h3> <br> ${noteText[i]} </div>
 
     <div onclick="deleteCard(${i})" class="note-cancel">
       X
     </div>
  </div>`;
   }
-}
+};
 
 function addCard() {
   document.getElementById("editCard").classList.remove("d-none");

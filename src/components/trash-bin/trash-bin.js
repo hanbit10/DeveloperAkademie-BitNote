@@ -4,7 +4,7 @@ let noteText = [];
 let trashTitle = [];
 let trashText = [];
 
-function render() {
+window.render = () => {
   let note = document.getElementById("content");
   note.innerHTML = "";
 
@@ -13,13 +13,13 @@ function render() {
   for (let i = 0; i < trashTitle.length; i++) {
     note.innerHTML += /*html*/ `
       <div id="note-block${i}" class="note-block">
-        <div class="note-text"> ${trashTitle[i]} <br> ${trashText[i]} </div>
+        <div class="note-text"> <h3>${trashTitle[i]}</h3> <br> ${trashText[i]} </div>
 
-      <div onclick="deleteTrash(${i})" class="note-cancel"> X </div>
-      <div onclick="restoreCard(${i})">O</div>
+      <div onclick="deleteTrash(${i})" class="note-cancel">X</div>
+      <div onclick="restoreCard(${i})" class="note-restore">0</div>
    </div>`;
   }
-}
+};
 
 function getTrash() {
   let titleAsText = localStorage.getItem("trashNoteTitle");
@@ -42,7 +42,7 @@ function deleteTrash(index) {
 
 function saveTrash() {
   localStorage.setItem("trashNoteTitle", JSON.stringify(trashTitle));
-  localStorage.setItem("trashNoteText", JSON.stringify(trashTitle));
+  localStorage.setItem("trashNoteText", JSON.stringify(trashText));
 }
 
 function saveCard() {

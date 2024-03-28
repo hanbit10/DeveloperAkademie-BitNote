@@ -3,22 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/components/header/header.css" />
+    <style>
+      header {
+        background-color: beige;
+        height: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+
+      .header-logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+      }
+
+      .header-img {
+        width: 100%;
+        max-width: 40px;
+        max-height: 40px;
+        aspect-ratio: 1/1;
+      }
+
+      .nav-menu {
+        margin-left: 10px;
+        width: 40px;
+        cursor: pointer;
+      }
+
+      .nav-menu:hover {
+        background-color: white;
+        border-radius: 50%;
+        /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+      }
+    </style>
     <title>Document</title>
   </head>
   <body>
-    <div>
-      <img
-        onclick="openNav()"
-        class="nav-menu"
-        src="/src/assets/icons/menubar-brown.svg"
-        alt=""
-      />
-    </div>
+    <img
+      onclick="openNav()"
+      class="nav-menu"
+      src="/src/assets/icons/menu-svgrepo-com.svg"
+      alt=""
+    />
 
-    <a href="/src/index.html" class="header-logo">
+    <!-- <a href="/src/index.html" class="header-logo">
       <img class="header-img" src="/src/assets/icon1.png" alt="" />
       <h1>BitNote</h1>
-    </a>
+    </a> -->
   </body>
 </html>

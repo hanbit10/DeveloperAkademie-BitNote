@@ -3,15 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/components/footer/footer.css" />
     <title>Document</title>
+    <style>
+      footer {
+        height: 100px;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid rgb(143, 135, 135, 0.2);
+      }
+
+      .footer-img {
+        width: 48px;
+      }
+
+      .footer-social-logo {
+        margin: 8px;
+        width: 100%;
+        max-width: 48px;
+        min-width: 24px;
+      }
+
+      .footer-social-container {
+        display: flex;
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        color: black;
+        text-decoration: none;
+      }
+
+      .footer-link:hover {
+        background-color: beige;
+        border-radius: 50px;
+      }
+
+      .footer-impressum {
+        color: black;
+        text-decoration: none;
+      }
+
+      .footer-impressum:hover {
+        color: rgb(151, 105, 18);
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
     <div>
-      <div class="footer-logo">
+      <a href="/src/index.html" class="footer-logo">
         <img class="footer-img" src="/src/assets/icon1.png" alt="" />
-        <div class="footer-logo-text">BitNote</div>
-      </div>
+        <h2>BitNote</h2>
+      </a>
 
       <div>Copyright © 2024 Hanbit Chang</div>
     </div>
@@ -38,6 +84,6 @@
           alt=""
       /></a>
     </div>
-    <a href="#">Impressum & Datenschutz</a>
+    <!-- <a class="footer-impressum" href="#">Impressum & Datenschutz</a> -->
   </body>
 </html>

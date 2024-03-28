@@ -2,21 +2,115 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/src/components/responsive/responsive.css" />
+    <style>
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: beige;
+        /* background-color: burlywood; */
+        overflow-x: hidden;
+        transition: 0.5s;
+      }
+
+      .sidebar-header {
+        height: 70px;
+        display: flex;
+        align-items: center;
+      }
+
+      .sidebar-logo {
+        display: flex;
+        align-items: center;
+        margin: 8px;
+        color: black;
+        text-decoration: none;
+      }
+
+      .sidebar-img {
+        width: 100%;
+        max-width: 30px;
+        aspect-ratio: 1/1;
+      }
+
+      .sidebar-link {
+        padding: 18px 8px 18px 32px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #3a3a3a;
+        display: block;
+        font-weight: bold;
+      }
+
+      .sidebar-link:hover {
+        /* background-color: white; */
+        color: rgb(151, 105, 18);
+        border-radius: 25px;
+        text-decoration: underline;
+      }
+
+      .sidebar .closebtn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 50px;
+        margin-left: 50px;
+        cursor: pointer;
+      }
+
+      .closebtn:hover {
+        background-color: white;
+        border-radius: 50%;
+      }
+
+      .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        padding: 10px 15px;
+        border: none;
+      }
+
+      .openbtn:hover {
+        background-color: #444;
+      }
+
+      /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+      @media screen and (max-height: 450px) {
+        .sidebar {
+          padding-top: 15px;
+        }
+        .sidebar a {
+          font-size: 18px;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="mySidebar" class="sidebar">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-      <a href="/src/index.html">Home</a>
-      <a href="/src/pages/trash-page/trash-page.html">Trsh</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
-    </div>
+      <div class="sidebar-header">
+        <a href="/src/index.html" class="sidebar-logo">
+          <img class="sidebar-img" src="/src/assets/icon1.png" alt="" />
+          <h2>BitNote</h2>
+        </a>
+        <img
+          onclick="closeNav()"
+          class="closebtn"
+          src="/src/assets/icons/iconxx.svg"
+          alt=""
+        />
+      </div>
 
-    <!-- <div id="main">
-      <h2>Collapsed Sidebar</h2>
-    </div> -->
+      <a class="sidebar-link" href="/src/index.html">Home</a>
+      <a class="sidebar-link" href="/src/pages/trash-page/trash-page.html"
+        >Trash</a
+      >
+      <a class="sidebar-link" href="#">About</a>
+      <a class="sidebar-link" href="#">Contact</a>
+    </div>
   </body>
 </html>
