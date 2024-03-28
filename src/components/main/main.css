@@ -46,15 +46,15 @@
   border-radius: 5px;
 }
 
+.note-block:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+}
+
 .note-text {
   height: 195px;
   overflow: hidden;
   word-wrap: break-word;
-}
-
-.note-block:hover {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  cursor: pointer;
 }
 
 .note-cancel {
@@ -99,6 +99,10 @@
 
 .edit-note-card:hover {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.edit-note-title {
+  font-weight: b;
 }
 
 .edit-line {

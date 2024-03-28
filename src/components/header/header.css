@@ -10,6 +10,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-decoration: none;
+  color: black;
 }
 
 .header-img {
@@ -17,4 +19,15 @@ header {
   max-width: 40px;
   max-height: 40px;
   aspect-ratio: 1/1;
+}
+
+.nav-menu {
+  margin-left: 10px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.nav-menu:hover {
+  background-color: white;
+  border-radius: 50%;
 }

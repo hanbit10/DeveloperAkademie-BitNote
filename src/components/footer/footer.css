@@ -1,6 +1,4 @@
-.footer {
-  padding-left: min(160px, 10%);
-  padding-right: min(160px, 10%);
+footer {
   height: 100px;
   background-color: antiquewhite;
   display: flex;

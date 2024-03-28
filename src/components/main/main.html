@@ -11,9 +11,16 @@
       <section class="add-section">
         <div onclick="addCard()" class="add-btn">+</div>
       </section>
+
       <section class="edit-note-section">
         <div id="editCard" class="edit-note-card d-none">
-          <input type="text" id="editCardInput" placeholder="Title" required />
+          <input
+            type="text"
+            class="edit-note-title"
+            id="editCardInput"
+            placeholder="Title"
+            required
+          />
           <div class="edit-line"></div>
           <textarea
             class="edit-textarea"
@@ -44,5 +51,8 @@
 
       <div class="content" id="content"></div>
     </div>
+    <script>
+      includeHTML();
+    </script>
   </body>
 </html>

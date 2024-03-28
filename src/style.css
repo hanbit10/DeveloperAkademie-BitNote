@@ -1,7 +1,18 @@
 body {
   margin: 0;
+  overflow-x: hidden;
+  position: relative;
+
+  font-family: "Lato", sans-serif;
 }
 
 .example::-webkit-scrollbar {
   display: none;
+}
+
+header,
+footer,
+section {
+  padding-left: min(160px, 10%);
+  padding-right: min(160px, 10%);
 }

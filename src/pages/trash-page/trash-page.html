@@ -3,18 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/src/assets/icon1.png" alt="" />
-    <title>BitNote</title>
-    <script src="script.js"></script>
-    <script src="/src/components/main/main.js"></script>
+    <title>Document</title>
+    <script src="/src/script.js"></script>
     <script src="/src/components/responsive/responsive.js"></script>
-    <link rel="stylesheet" href="style.css" />
+    <script src="/src/components/trash-bin/trash-bin.js"></script>
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body onload="render()">
     <header w3-include-html="/src/components/header/header.html"></header>
-
-    <section w3-include-html="/src/components/main/main.html"></section>
+    <div w3-include-html="/src/components/trash-bin/trash-bin.html"></div>
     <div w3-include-html="/src/components/responsive/responsive.html"></div>
+
     <footer w3-include-html="/src/components/footer/footer.html"></footer>
 
     <script>

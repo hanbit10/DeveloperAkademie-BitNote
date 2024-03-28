@@ -1,27 +1,15 @@
-let noteTitle = [
-  "Hallo",
-  "Hanbit",
-  "afdddddddddddddddddddddddddddddddddddddafddddddddddddddddddddddddddddddddddddd",
-  "afdddddddddddddddddddddddddddddddddddddafddddddddddddddddddddddddddddddddddddd",
-  "afddddddddddddddddddddddddddddddddddddd",
-  "afddddddddddddddddddddddddddddddddddddd",
-  "afddddddddddddddddddddddddddddddddddddd",
-];
-let noteText = [
-  "nice to meet you!",
-  "Hanbit",
-  "afdddddddddddddddddddddddddddddddddddddafdddddddddddddddddddddddddddddddddddddafdddddddddddddddddddddddddddddddddddddafdddddddddddddddddddddddddddddddddddddafdddddddddddddddddddddddddddddddddddddafdddddddddddddddddddddddddddddddddddddafdddddddddddddddddddddddddddddddddddddafdddddddddddddddddddddddddddddddddddddafdddddddddddddddddddddddddddddddddddddafdddddddddddddddddddddddddddddddddddddafdddddddddddddddddddddddddddddddddddddafdddddddddddddddddddddddddddddddddddddafdddddddddddddddddddddddddddddddddddddafdddddddddddddddddddddddddddddddddddddafddddddddddddddddddddddddddddddddddddd",
-  "afdddddddddddddddddddddddddddddddddddddafddddddddddddddddddddddddddddddddddddd",
-  "afdddddddddddddddddddddddddddddddddddddafddddddddddddddddddddddddddddddddddddd",
-  "afdddddddddddddddddddddddddddddddddddddafddddddddddddddddddddddddddddddddddddd",
-  "afdddddddddddddddddddddddddddddddddddddafddddddddddddddddddddddddddddddddddddd",
-];
+let noteTitle = [];
+let noteText = [];
 
-let menuBar = false;
+let trashTitle = [];
+let trashText = [];
 
 function render() {
   let note = document.getElementById("content");
   note.innerHTML = "";
+
+  getCard();
+  getTrash();
 
   for (let i = 0; i < noteTitle.length; i++) {
     note.innerHTML += /*html*/ `
@@ -39,20 +27,25 @@ function addCard() {
   document.getElementById("editCard").classList.remove("d-none");
 }
 
-function deleteCard(index) {
-  let cardID = document.getElementById(`note-block${index}`);
-  cardID.classList.add("d-none");
-  noteTitle.splice(index, 1);
-  noteText.splice(index, 1);
-  render();
-}
-
 function closeEditCard() {
   document.getElementById("editCard").classList.add("d-none");
   let newTitle = document.getElementById("editCardInput");
   let newText = document.getElementById("editCardTextArea");
   newTitle.value = "";
   newText.value = "";
+}
+
+function deleteCard(index) {
+  let cardID = document.getElementById(`note-block${index}`);
+  cardID.classList.add("d-none");
+  trashTitle.push(noteTitle[index]);
+  trashText.push(noteText[index]);
+  noteTitle.splice(index, 1);
+  noteText.splice(index, 1);
+
+  saveTrash();
+  saveCard();
+  render();
 }
 
 function saveEditCard() {
@@ -70,5 +63,34 @@ function saveEditCard() {
     alert("fiel out the form");
   }
 
+  saveCard();
   render();
+}
+
+function saveCard() {
+  localStorage.setItem("title", JSON.stringify(noteTitle));
+  localStorage.setItem("note", JSON.stringify(noteText));
+}
+
+function getCard() {
+  let titleAsText = localStorage.getItem("title");
+  let noteAsText = localStorage.getItem("note");
+  if (titleAsText && noteAsText) {
+    noteTitle = JSON.parse(titleAsText);
+    noteText = JSON.parse(noteAsText);
+  }
+}
+
+function saveTrash() {
+  localStorage.setItem("trashNoteTitle", JSON.stringify(trashTitle));
+  localStorage.setItem("trashNoteText", JSON.stringify(trashText));
+}
+
+function getTrash() {
+  let titleAsText = localStorage.getItem("trashNoteTitle");
+  let noteAsText = localStorage.getItem("trashNoteText");
+  if (titleAsText && noteAsText) {
+    trashTitle = JSON.parse(titleAsText);
+    trashText = JSON.parse(noteAsText);
+  }
 }

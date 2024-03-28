@@ -1,0 +1,20 @@
+.note-block {
+  position: relative;
+  margin: 16px;
+  padding: 24px;
+  max-width: 300px;
+  height: 200px;
+  background-color: rgb(242, 196, 108);
+  border-radius: 5px;
+}
+
+.note-block:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+}
+
+.note-text {
+  height: 195px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
