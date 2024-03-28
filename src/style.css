@@ -24,3 +24,174 @@ header {
 h3 {
   margin: 0;
 }
+
+.container {
+  min-height: 100vh;
+}
+
+.add-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-btn {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(242, 196, 108);
+  color: rgb(151, 105, 18);
+  font-size: 160px;
+  font-weight: bold;
+  padding: 8px;
+
+  margin: 24px 8px 8px 8px;
+  border-radius: 50%;
+}
+
+.add-btn:hover {
+  color: rgb(151, 105, 18, 0.8);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.note-block {
+  position: relative;
+  margin: 16px;
+  padding: 24px;
+  max-width: 300px;
+  height: 150px;
+  background-color: rgb(242, 196, 108);
+  border-radius: 5px;
+}
+
+.note-block:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+}
+
+.note-text {
+  height: 195px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.note-cancel {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 18px;
+  padding: 1px;
+  border-radius: 50%;
+  text-align: center;
+  color: rgb(151, 105, 18);
+}
+
+.note-cancel:hover {
+  background-color: rgb(236, 173, 55);
+}
+
+.edit-note-section {
+  width: 100%;
+}
+
+.edit-note-card {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  max-width: 600px;
+  min-height: 600px;
+  height: auto;
+  background-color: rgb(242, 196, 108);
+  border-radius: 10px;
+  /* border: 5px solid rgb(151, 105, 18); */
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-note-title {
+  font-size: 32px;
+  font-weight: bolder;
+}
+
+.edit-line {
+  height: 1px;
+  width: 90%;
+  background-color: rgb(151, 105, 18);
+}
+
+.edit-textarea {
+  height: 500px;
+}
+
+input,
+textarea {
+  width: 90%;
+  padding: 8px;
+  margin: 16px 8px 8px 8px;
+
+  background-color: rgb(242, 196, 108);
+  border: 0;
+  /* border-color: 0; */
+  outline: none;
+}
+
+input {
+  font-size: larger;
+}
+
+.edit-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.cancel-btn,
+.save-btn {
+  font-size: larger;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 16px;
+  width: 30%;
+  height: 40px;
+  border: 0;
+  border-radius: 5px;
+  color: aliceblue;
+}
+
+.cancel-btn {
+  background-color: rgb(220, 98, 99);
+}
+
+.cancel-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.save-btn {
+  background-color: rgb(151, 105, 18);
+}
+
+.save-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.d-none {
+  display: none;
+}

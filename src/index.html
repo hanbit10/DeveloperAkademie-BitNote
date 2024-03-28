@@ -3,19 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js"></script>
+
     <link rel="icon" href="/src/assets/icon1.png" alt="" />
     <title>BitNote</title>
-
     <link rel="stylesheet" href="./style.css" />
-    <script src="/src/components/main/main.js"></script>
-    <script src="script.js"></script>
   </head>
   <body onload="render()">
     <header w3-include-html="/src/components/header/header.html"></header>
-    <section w3-include-html="/src/components/main/main.html"></section>
+
+    <section class="container">
+      <section class="add-section">
+        <div onclick="addCard()" class="add-btn">+</div>
+      </section>
+
+      <section class="edit-note-section">
+        <div id="editCard" class="edit-note-card d-none">
+          <input
+            type="text"
+            class="edit-note-title"
+            id="editCardInput"
+            placeholder="Title"
+            required
+          />
+          <div class="edit-line"></div>
+          <textarea
+            class="edit-textarea"
+            id="editCardTextArea"
+            type="text"
+            placeholder="Your note"
+            required
+          ></textarea>
+          <div class="edit-line"></div>
+          <div class="edit-btn-container">
+            <button
+              class="cancel-btn"
+              onclick="closeEditCard()"
+              id="closeEditCard"
+            >
+              CANCEL
+            </button>
+            <button
+              class="save-btn"
+              onclick="saveEditCard()"
+              id="closeEditCard"
+            >
+              SAVE
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div id="content" class="content"></div>
+    </section>
     <div w3-include-html="/src/components/responsive/responsive.html"></div>
     <footer w3-include-html="/src/components/footer/footer.html"></footer>
-
     <script>
       includeHTML();
     </script>
