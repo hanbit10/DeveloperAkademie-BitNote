@@ -250,3 +250,16 @@ textarea::placeholder {
 .d-none {
   display: none;
 }
+
+@media screen and (max-width: 480px) {
+  .restore-img,
+  .trash-img {
+    display: block;
+  }
+
+  .create-note-card,
+  .edit-note-card {
+    max-width: 300px;
+    min-height: 300px;
+  }
+}
