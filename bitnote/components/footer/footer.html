@@ -41,6 +41,16 @@
         color: rgb(213, 107, 21);
         text-decoration: underline;
       }
+
+      .copy-right {
+        display: flex;
+      }
+
+      @media screen and (max-width: 550px) {
+        .copy-right {
+          flex-direction: column;
+        }
+      }
     </style>
   </head>
   <body>
@@ -50,7 +60,10 @@
         <h2>BitNote</h2>
       </a>
 
-      <div>Copyright © 2024 Hanbit Chang</div>
+      <div class="copy-right">
+        <div>Copyright © 2024&nbsp;</div>
+        <div>Hanbit Chang</div>
+      </div>
     </div>
 
     <div class="footer-social-container">

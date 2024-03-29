@@ -24,15 +24,19 @@ function render() {
   getTrash();
 
   for (let i = 0; i < trashTitle.length; i++) {
-    note.innerHTML += /*html*/ `
-      <div id="note-block${i}" class="note-block">
-        <div div onclick="deleteTrash(${i})" class="note-cancel">
-          <img onclick="restoreCard(${i})" class="restore-img" src="/bitnote/assets/icons/icons8-restore.svg">
-          <img onclick="deleteCard(${i})" class="trash-img"  src="/bitnote/assets/icons/icons8-trash2.svg">
-        </div>
-        <div class="note-text"> <h3>${trashTitle[i]}</h3> <br> ${trashText[i]} </div>
-      </div>`;
+    note.innerHTML += createNote(i);
   }
+}
+
+function createNote(i) {
+  return /*html*/ `
+  <div id="note-block${i}" class="note-block">
+    <div  class="note-cancel">
+      <img onclick="restoreCard(${i})" class="restore-img" src="/bitnote/assets/icons/icons8-restore.svg">
+      <img onclick="deleteTrash(${i})" class="trash-img"  src="/bitnote/assets/icons/icons8-trash2.svg">
+    </div>
+    <div class="note-text"> <h3>${trashTitle[i]}</h3> <br> ${trashText[i]} </div>
+  </div>`;
 }
 
 function getTrash() {
@@ -83,10 +87,8 @@ function restoreCard(index) {
 
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
 }
 
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
 }

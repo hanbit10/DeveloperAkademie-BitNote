@@ -17,7 +17,7 @@ section {
 }
 
 footer {
-  height: 100px;
+  height: 150px;
   background-color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -109,19 +109,23 @@ h3 {
 }
 
 .note-cancel:hover .trash-img {
-  display: block;
+  /* display: block; */
+  opacity: 1;
 }
 
 .note-cancel:hover .restore-img {
-  display: block;
+  /* display: block; */
+  opacity: 1;
 }
 
 .restore-img,
 .trash-img {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   padding: 2px;
-  display: none;
+  /* display: none; */
+  opacity: 0;
+  transition: opacity 0.4s;
 }
 
 .restore-img {
@@ -134,8 +138,8 @@ h3 {
 
 .restore-img:hover,
 .trash-img:hover {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   background-color: rgba(236, 217, 108, 0.5);
   border-radius: 5px;
 }
@@ -251,10 +255,14 @@ textarea::placeholder {
   display: none;
 }
 
+.ml-250 {
+  margin-left: 250px;
+}
+
 @media screen and (max-width: 480px) {
   .restore-img,
   .trash-img {
-    display: block;
+    opacity: 1;
   }
 
   .create-note-card,

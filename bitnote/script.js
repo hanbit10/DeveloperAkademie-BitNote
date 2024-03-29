@@ -25,18 +25,22 @@ function render() {
   getCard();
   getTrash();
   for (let i = 0; i < noteTitle.length; i++) {
-    note.innerHTML += /*html*/ `
-    <div id="note-block${i}" class="note-block">
-      <div  class="note-cancel"> 
-        <img  class="trash-img" onclick="deleteCard(${i})" src="/bitnote/assets/icons/icons8-trash2.svg" alt="">
-      </div>
-      <div class="note-text"  onclick="editCard(${i})"> 
-        <h3>${noteTitle[i]}</h3> <br> ${noteText[i]} 
-      </div>
-    </div>
- 
-      `;
+    note.innerHTML += createNote(i);
   }
+}
+
+function createNote(i) {
+  return /*html*/ `
+  <div id="note-block${i}" class="note-block">
+    <div  class="note-cancel"> 
+      <img  class="trash-img" onclick="deleteCard(${i})" src="/bitnote/assets/icons/icons8-trash2.svg" alt="">
+    </div>
+    <div class="note-text"  onclick="editCard(${i})"> 
+      <h3>${noteTitle[i]}</h3><pre>${noteText[i]} </pre>
+    </div>
+  </div>
+
+    `;
 }
 
 function editCard(i) {
@@ -149,10 +153,8 @@ function getTrash() {
 
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
 }
 
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
 }
