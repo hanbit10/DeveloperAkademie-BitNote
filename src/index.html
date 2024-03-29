@@ -17,6 +17,43 @@
         <div onclick="addCard()" class="add-btn">+</div>
       </section>
 
+      <section class="create-note-section">
+        <div id="createCard" class="create-note-card d-none">
+          <input
+            type="text"
+            class="create-note-title"
+            id="createCardInput"
+            placeholder="Title"
+            required
+          />
+          <div class="create-line"></div>
+          <textarea
+            class="create-textarea"
+            id="createCardTextArea"
+            type="text"
+            placeholder="Your note"
+            required
+          ></textarea>
+          <div class="create-line"></div>
+          <div class="create-btn-container">
+            <button
+              class="cancel-btn"
+              onclick="closeCreateCard()"
+              id="closeCreateCard"
+            >
+              CANCEL
+            </button>
+            <button
+              class="save-btn"
+              onclick="saveCreateCard()"
+              id="closeCreateCard"
+            >
+              SAVE
+            </button>
+          </div>
+        </div>
+      </section>
+
       <section class="edit-note-section">
         <div id="editCard" class="edit-note-card d-none">
           <input
@@ -43,13 +80,14 @@
             >
               CANCEL
             </button>
-            <button
+            <div class="save-btn-container" id="saveEditCard"></div>
+            <!-- <button
               class="save-btn"
               onclick="saveEditCard()"
               id="closeEditCard"
             >
               SAVE
-            </button>
+            </button> -->
           </div>
         </div>
       </section>

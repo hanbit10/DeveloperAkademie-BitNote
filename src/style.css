@@ -16,9 +16,22 @@ section {
   padding-right: min(160px, 10%);
 }
 
+footer {
+  height: 100px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgb(143, 135, 135, 0.2);
+}
+
 header {
-  padding-left: min(10px, 10%);
-  padding-right: min(160px, 10%);
+  background-color: #ffffff;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(143, 135, 135, 0.2);
 }
 
 h3 {
@@ -27,6 +40,7 @@ h3 {
 
 .container {
   min-height: 100vh;
+  background-color: rgb(232, 232, 232);
 }
 
 .add-section {
@@ -36,25 +50,24 @@ h3 {
 }
 
 .add-btn {
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: rgb(242, 196, 108);
-  color: rgb(151, 105, 18);
-  font-size: 160px;
-  font-weight: bold;
+  background-color: #fcf2c1;
+
+  font-size: 80px;
+  font-weight: normal;
   padding: 8px;
 
   margin: 24px 8px 8px 8px;
   border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .add-btn:hover {
-  color: rgb(151, 105, 18, 0.8);
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: pointer;
 }
 
@@ -67,20 +80,20 @@ h3 {
 .note-block {
   position: relative;
   margin: 16px;
-  padding: 24px;
   max-width: 300px;
   height: 150px;
-  background-color: rgb(242, 196, 108);
-  border-radius: 5px;
+  background-color: #fcf2c1;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .note-block:hover {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: pointer;
 }
 
 .note-text {
-  height: 195px;
+  height: 75px;
+  padding: 24px;
   overflow: hidden;
   word-wrap: break-word;
 }
@@ -93,17 +106,19 @@ h3 {
   padding: 1px;
   border-radius: 50%;
   text-align: center;
-  color: rgb(151, 105, 18);
+  color: #fcf2c1;
 }
 
 .note-cancel:hover {
-  background-color: rgb(236, 173, 55);
+  color: black;
 }
 
+.create-note-section,
 .edit-note-section {
   width: 100%;
 }
 
+.create-note-card,
 .edit-note-card {
   position: absolute;
   z-index: 1;
@@ -111,8 +126,8 @@ h3 {
   max-width: 600px;
   min-height: 600px;
   height: auto;
-  background-color: rgb(242, 196, 108);
-  border-radius: 10px;
+  background-color: #fcf2c1;
+  border-radius: 20px;
   /* border: 5px solid rgb(151, 105, 18); */
   margin-left: auto;
   margin-right: auto;
@@ -126,19 +141,30 @@ h3 {
   align-items: center;
 }
 
+.create-note-title,
 .edit-note-title {
   font-size: 32px;
   font-weight: bolder;
+  color: black;
 }
 
+.create-line,
 .edit-line {
   height: 1px;
   width: 90%;
-  background-color: rgb(151, 105, 18);
+  background-color: rgb(0, 0, 0);
 }
 
+.create-textarea,
 .edit-textarea {
   height: 500px;
+}
+
+.create-btn-container,
+.edit-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
 input,
@@ -147,9 +173,8 @@ textarea {
   padding: 8px;
   margin: 16px 8px 8px 8px;
 
-  background-color: rgb(242, 196, 108);
+  background-color: #fcf2c1bc;
   border: 0;
-  /* border-color: 0; */
   outline: none;
 }
 
@@ -157,14 +182,12 @@ input {
   font-size: larger;
 }
 
-.edit-btn-container {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
+input::placeholder,
+textarea::placeholder {
+  color: rgb(55, 55, 55);
 }
 
-.cancel-btn,
-.save-btn {
+.cancel-btn {
   font-size: larger;
   font-weight: bold;
   cursor: pointer;
@@ -173,23 +196,27 @@ input {
   height: 40px;
   border: 0;
   border-radius: 5px;
-  color: aliceblue;
-}
-
-.cancel-btn {
-  background-color: rgb(220, 98, 99);
-}
-
-.cancel-btn:hover {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  color: rgb(0, 0, 0);
 }
 
 .save-btn {
-  background-color: rgb(151, 105, 18);
+  font-size: larger;
+  font-weight: bold;
+  height: 40px;
+  border: 0;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
 }
 
-.save-btn:hover {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+.save-btn-container {
+  width: 30%;
+  margin: 16px;
+  cursor: pointer;
+}
+
+.cancel-btn,
+.save-btn {
+  background-color: #fcf2c1;
 }
 
 .d-none {
