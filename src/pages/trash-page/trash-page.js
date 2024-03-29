@@ -12,19 +12,8 @@ async function includeHTML() {
   }
 }
 
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
-}
-
 let noteTitle = [];
 let noteText = [];
-
 let trashTitle = [];
 let trashText = [];
 
@@ -37,11 +26,12 @@ function render() {
   for (let i = 0; i < trashTitle.length; i++) {
     note.innerHTML += /*html*/ `
       <div id="note-block${i}" class="note-block">
+        <div div onclick="deleteTrash(${i})" class="note-cancel">
+          <img onclick="restoreCard(${i})" class="restore-img" src="/src/assets/icons/icons8-restore.svg">
+          <img onclick="deleteCard(${i})" class="trash-img"  src="/src/assets/icons/icons8-trash2.svg">
+        </div>
         <div class="note-text"> <h3>${trashTitle[i]}</h3> <br> ${trashText[i]} </div>
-
-      <div onclick="deleteTrash(${i})" class="note-cancel">X</div>
-      <div onclick="restoreCard(${i})" class="note-restore">0</div>
-   </div>`;
+      </div>`;
   }
 }
 
@@ -89,4 +79,14 @@ function restoreCard(index) {
   noteText.push(trashText[index]);
   deleteTrash(index);
   saveCard();
+}
+
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
 }

@@ -93,24 +93,51 @@ h3 {
 
 .note-text {
   height: 75px;
-  padding: 24px;
+  padding: 0px 24px 24px 24px;
   overflow: hidden;
   word-wrap: break-word;
 }
 
 .note-cancel {
-  position: absolute;
-  top: 3px;
-  right: 3px;
-  width: 18px;
+  display: flex;
+  justify-content: flex-end;
+  width: 30%;
+  margin-left: 70%;
+  height: 24px;
   padding: 1px;
-  border-radius: 50%;
   text-align: center;
-  color: #fcf2c1;
 }
 
-.note-cancel:hover {
-  color: black;
+.note-cancel:hover .trash-img {
+  display: block;
+}
+
+.note-cancel:hover .restore-img {
+  display: block;
+}
+
+.restore-img,
+.trash-img {
+  width: 16px;
+  height: 16px;
+  padding: 2px;
+  display: none;
+}
+
+.restore-img {
+  margin-right: 2px;
+}
+
+.trash-img {
+  margin-right: 8px;
+}
+
+.restore-img:hover,
+.trash-img:hover {
+  width: 16px;
+  height: 16px;
+  background-color: rgba(236, 217, 108, 0.5);
+  border-radius: 5px;
 }
 
 .create-note-section,
@@ -206,6 +233,7 @@ textarea::placeholder {
   border: 0;
   border-radius: 5px;
   color: rgb(0, 0, 0);
+  cursor: pointer;
 }
 
 .save-btn-container {
