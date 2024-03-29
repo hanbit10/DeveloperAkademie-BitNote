@@ -27,8 +27,8 @@ function render() {
     note.innerHTML += /*html*/ `
       <div id="note-block${i}" class="note-block">
         <div div onclick="deleteTrash(${i})" class="note-cancel">
-          <img onclick="restoreCard(${i})" class="restore-img" src="/src/assets/icons/icons8-restore.svg">
-          <img onclick="deleteCard(${i})" class="trash-img"  src="/src/assets/icons/icons8-trash2.svg">
+          <img onclick="restoreCard(${i})" class="restore-img" src="/bitnote/assets/icons/icons8-restore.svg">
+          <img onclick="deleteCard(${i})" class="trash-img"  src="/bitnote/assets/icons/icons8-trash2.svg">
         </div>
         <div class="note-text"> <h3>${trashTitle[i]}</h3> <br> ${trashText[i]} </div>
       </div>`;
