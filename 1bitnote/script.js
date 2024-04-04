@@ -33,7 +33,7 @@ function createNote(i) {
   return /*html*/ `
   <div id="note-block${i}" class="note-block">
     <div  class="note-cancel"> 
-      <img  class="trash-img" onclick="deleteCard(${i})" src="/bitnote/assets/icons/icons8-trash2.svg" alt="">
+      <img  class="trash-img" onclick="deleteCard(${i})" src="/1bitnote/assets/icons/icons8-trash2.svg" alt="">
     </div>
     <div class="note-text"  onclick="editCard(${i})"> 
       <h3>${noteTitle[i]}</h3><pre>${noteText[i]} </pre>

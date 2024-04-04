@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js"></script>
+
+    <link rel="icon" href="/1bitnote/assets/icon1.png" alt="" />
+    <title>BitNote</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body onload="render()">
+    <header w3-include-html="/1bitnote/components/header/header.html"></header>
+
+    <section class="container">
+      <section class="add-section">
+        <div onclick="addCard()" class="add-btn">+</div>
+      </section>
+
+      <section class="create-note-section">
+        <div id="createCard" class="create-note-card d-none">
+          <input type="text" class="create-note-title" id="createCardInput" placeholder="Title" required />
+          <div class="create-line"></div>
+          <textarea class="create-textarea" id="createCardTextArea" type="text" placeholder="Your note" required></textarea>
+          <div class="create-line"></div>
+          <div class="create-btn-container">
+            <button class="cancel-btn" onclick="closeCreateCard()" id="closeCreateCard">CANCEL</button>
+            <div class="save-btn-container">
+              <button class="save-btn" onclick="saveCreateCard()" id="closeCreateCard">SAVE</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="edit-note-section">
+        <div id="editCard" class="edit-note-card d-none">
+          <input type="text" class="edit-note-title" id="editCardInput" placeholder="Title" required />
+          <div class="edit-line"></div>
+          <textarea class="edit-textarea" id="editCardTextArea" type="text" placeholder="Your note" required></textarea>
+          <div class="edit-line"></div>
+          <div class="edit-btn-container">
+            <button class="cancel-btn" onclick="closeEditCard()" id="closeEditCard">CANCEL</button>
+            <div class="save-btn-container" id="saveEditCard"></div>
+            <!-- <button
+              class="save-btn"
+              onclick="saveEditCard()"
+              id="closeEditCard"
+            >
+              SAVE
+            </button> -->
+          </div>
+        </div>
+      </section>
+
+      <div id="content" class="content"></div>
+    </section>
+    <div w3-include-html="/1bitnote/components/responsive/responsive.html"></div>
+    <footer w3-include-html="/1bitnote/components/footer/footer.html"></footer>
+    <script>
+      includeHTML();
+    </script>
+  </body>
+</html>
