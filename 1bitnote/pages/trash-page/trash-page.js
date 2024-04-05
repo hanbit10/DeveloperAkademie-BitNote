@@ -32,8 +32,8 @@ function createNote(i) {
   return /*html*/ `
   <div id="note-block${i}" class="note-block">
     <div  class="note-cancel">
-      <img onclick="restoreCard(${i})" class="restore-img" src="/1bitnote/assets/icons/icons8-restore.svg">
-      <img onclick="deleteTrash(${i})" class="trash-img"  src="/1bitnote/assets/icons/icons8-trash2.svg">
+      <img onclick="restoreCard(${i})" class="restore-img" src="/assets/icons/icons8-restore.svg">
+      <img onclick="deleteTrash(${i})" class="trash-img"  src="/assets/icons/icons8-trash2.svg">
     </div>
     <div class="note-text"> <h3>${trashTitle[i]}</h3> <br> ${trashText[i]} </div>
   </div>`;
