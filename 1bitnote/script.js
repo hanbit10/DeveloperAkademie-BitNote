@@ -38,9 +38,7 @@ function createNote(i) {
     <div class="note-text"  onclick="editCard(${i})"> 
       <h3>${noteTitle[i]}</h3><pre>${noteText[i]} </pre>
     </div>
-  </div>
-
-    `;
+  </div>`;
 }
 
 function editCard(i) {
@@ -52,8 +50,7 @@ function editCard(i) {
 
   let saveButton = document.getElementById("saveEditCard");
   saveButton.innerHTML = /*html*/ `
-  <button class="save-btn" onclick="saveEditCard(${i})" > SAVE</button>
-  `;
+  <button class="save-btn" onclick="saveEditCard(${i})">SAVE</button>  `;
 }
 
 function addCard() {
@@ -91,7 +88,7 @@ function saveCreateCard() {
   let newTitle = document.getElementById("createCardInput");
   let newText = document.getElementById("createCardTextArea");
 
-  if (newTitle.value && newText.value) {
+  if (cardWritten(newTitle.value, newText.value)) {
     noteTitle.push(newTitle.value);
     noteText.push(newText.value);
     newTitle.value = "";
@@ -110,7 +107,7 @@ function saveEditCard(i) {
   let newTitle = document.getElementById("editCardInput");
   let newText = document.getElementById("editCardTextArea");
 
-  if (newTitle.value && newText.value) {
+  if (cardWritten(newTitle.value, newText.value)) {
     noteTitle[i] = newTitle.value;
     noteText[i] = newText.value;
     newTitle.value = "";
@@ -123,17 +120,21 @@ function saveEditCard(i) {
   render();
 }
 
+function cardWritten(val_1, val_2) {
+  return val_1 && val_2;
+}
+
 function saveCard() {
   localStorage.setItem("title", JSON.stringify(noteTitle));
   localStorage.setItem("note", JSON.stringify(noteText));
 }
 
 function getCard() {
-  let titleAsText = localStorage.getItem("title");
-  let noteAsText = localStorage.getItem("note");
-  if (titleAsText && noteAsText) {
-    noteTitle = JSON.parse(titleAsText);
-    noteText = JSON.parse(noteAsText);
+  let itemTitle = localStorage.getItem("title");
+  let itemText = localStorage.getItem("note");
+  if (itemTitle && itemText) {
+    noteTitle = JSON.parse(itemTitle);
+    noteText = JSON.parse(itemText);
   }
 }
 
@@ -143,11 +144,11 @@ function saveTrash() {
 }
 
 function getTrash() {
-  let titleAsText = localStorage.getItem("trashNoteTitle");
-  let noteAsText = localStorage.getItem("trashNoteText");
-  if (titleAsText && noteAsText) {
-    trashTitle = JSON.parse(titleAsText);
-    trashText = JSON.parse(noteAsText);
+  let itemTitle = localStorage.getItem("trashNoteTitle");
+  let itemTrash = localStorage.getItem("trashNoteText");
+  if (itemTitle && itemTrash) {
+    trashTitle = JSON.parse(itemTitle);
+    trashText = JSON.parse(itemTrash);
   }
 }
 
