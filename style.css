@@ -2,8 +2,8 @@ body {
   margin: 0;
   overflow-x: hidden;
   position: relative;
-
   font-family: "Lato", sans-serif;
+  background-color: #e8e8e8;
 }
 
 .example::-webkit-scrollbar {

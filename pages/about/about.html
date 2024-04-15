@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/assets/icons/bitgramwhite.svg" alt="" />
+    <title>About BitNote</title>
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      /* Add your custom CSS styles here */
+      .container {
+        max-width: 800px;
+        margin: auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+      p {
+        color: #666;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header w3-include-html="/components/header/header.html"></header>
+    <div class="container">
+      <h1>About Bitnote</h1>
+      <p>Welcome to BitNote, a simple and efficient note-taking website.</p>
+      <p>BitNote was created by Hanbit Chang with the goal of providing a minimalist and distraction-free platform for taking notes.</p>
+      <p>
+        The site utilizes <a href="https://fontawesome.com/">Font Awesome</a> for icons, enhancing the user experience with visually
+        appealing elements.
+      </p>
+      <p>
+        BitNote stores all data locally in your browser's storage. Please be aware that if the data is deleted from your browser, it cannot
+        be restored.
+      </p>
+      <h2>Key Features</h2>
+      <ul>
+        <li><strong>Simple Interface:</strong> BitNote offers a clean and intuitive interface, making note-taking effortless.</li>
+        <li><strong>Markdown Support:</strong> Write notes using Markdown syntax for formatting flexibility.</li>
+        <li><strong>Customization:</strong> Personalize your experience by choosing from a variety of themes and font options.</li>
+        <li><strong>Privacy:</strong> Your data remains private and is stored only in your browser's local storage.</li>
+        <li>
+          <strong>Accessibility:</strong> Access your notes from any device with internet access, without the need to sign up or log in.
+        </li>
+      </ul>
+      <h2>Feedback</h2>
+      <p>
+        We value your feedback! If you have any suggestions, feature requests, or encounter any issues while using Bitnote, please don't
+        hesitate to <a href="chanbit10@gmail.com">contact us</a>.
+      </p>
+      <p>Thank you for choosing Bitnote for your note-taking needs!</p>
+    </div>
+
+    <div w3-include-html="/components/responsive/responsive.html"></div>
+    <footer w3-include-html="/components/footer/footer.html"></footer>
+
+    <script>
+      async function includeHTML() {
+        let includeElements = document.querySelectorAll("[w3-include-html]");
+        for (let i = 0; i < includeElements.length; i++) {
+          const element = includeElements[i];
+          file = element.getAttribute("w3-include-html"); // "includes/header.html"
+          let resp = await fetch(file);
+          if (resp.ok) {
+            element.innerHTML = await resp.text();
+          } else {
+            element.innerHTML = "Page not found";
+          }
+        }
+      }
+
+      function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+      }
+
+      includeHTML();
+    </script>
+  </body>
+</html>
